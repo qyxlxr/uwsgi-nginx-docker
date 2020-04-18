@@ -85,14 +85,14 @@ If you are building a **Flask** web application you should use instead [**tiango
 
 ### Custom app directory
 
-If you need to use a directory for your app different than `/app`, you can override the uWSGI config file path with an environment variable `UWSGI_INI`, and put your custom `uwsgi.ini` file there. 
+If you need to use a directory for your app different than `/app`, you can override the uWSGI config file path with an environment variable `UWSGI_PATH`, and put your custom `uwsgi.ini` file there. 
 
 For example, if you needed to have your application directory in `/application` instead of `/app`, your `Dockerfile` would look like:
 
 ```Dockerfile
 FROM tiangolo/uwsgi-nginx:python3.7
 
-ENV UWSGI_INI /application/uwsgi.ini
+ENV UWSGI_PATH /application/uwsgi.ini
 
 COPY ./application /application
 WORKDIR /appapplication
@@ -329,7 +329,7 @@ In the official Python image, there's a Stretch version only for Python 3.6. So,
 
 * 2017-08-09: You can set a custom maximum upload file size using an environment variable `NGINX_MAX_UPLOAD`, by default it has a value of `0`, that allows unlimited upload file sizes. This differs from Nginx's default value of 1 MB. It's configured this way because that's the simplest experience a developer that is not expert in Nginx would expect.
 
-* 2017-08-09: Now you can override where to look for the `uwsgi.ini` file, and with that, change the default directory from `/app` to something else, using the envirnoment variable `UWSGI_INI`.
+* 2017-08-09: Now you can override where to look for the `uwsgi.ini` file, and with that, change the default directory from `/app` to something else, using the envirnoment variable `UWSGI_PATH`.
 
 * 2017-08-08: There's a new `latest` tag image, just to show a warning for those still using `latest` for Python 2.7 web applications. As of now, [everyone](https://www.python.org/dev/peps/pep-0373/) [should be](http://flask.pocoo.org/docs/0.12/python3/#python3-support) [using Python 3](https://docs.djangoproject.com/en/1.11/faq/install/#what-python-version-should-i-use-with-django).
 

@@ -71,7 +71,7 @@ def test_env_vars_1():
         tag,
         name=CONTAINER_NAME,
         environment={
-            "UWSGI_INI": "/application/custom_app/uwsgi.ini",
+            "UWSGI_PATH": "/application/custom_app/uwsgi.ini",
             "LISTEN_PORT": "8080",
         },
         ports={"8080": "8000"},

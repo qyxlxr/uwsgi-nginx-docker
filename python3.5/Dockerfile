@@ -114,7 +114,7 @@ RUN apt-get update && apt-get install -y supervisor \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Which uWSGI .ini file should be used, to make it customizable
-ENV UWSGI_INI /app/uwsgi.ini
+ENV UWSGI_PATH /app/uwsgi.ini
 
 # By default, run 2 processes
 ENV UWSGI_CHEAPER 2

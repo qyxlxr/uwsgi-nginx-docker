@@ -159,7 +159,7 @@ RUN apk add --no-cache supervisor
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 # Which uWSGI .ini file should be used, to make it customizable
-ENV UWSGI_INI /app/uwsgi.ini
+ENV UWSGI_PATH /app/uwsgi.ini
 
 # By default, run 2 processes
 ENV UWSGI_CHEAPER 2
